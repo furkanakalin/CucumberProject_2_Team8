@@ -22,13 +22,13 @@ public class _04_DialogContent extends ParentPage {
     @FindBy(id = "email")
     public WebElement email;
 
-    @FindBy(id = "password")
+    @FindBy(name = "login[password]")
     public WebElement password;
 
     @FindBy(xpath = "//button[@class='action login primary']")
     public WebElement submit;
 
-    @FindBy(xpath = "//a/span[text()='What's New']")
+    @FindBy(xpath = "(//div[@id='store.menu']//a)[1]")
     public WebElement whatsNewButton;
 
     @FindBy(xpath = "//a/span[text()='Women']")
@@ -74,8 +74,19 @@ public class _04_DialogContent extends ParentPage {
 
     public WebElement getWebElement(String strWebElement) {
         switch (strWebElement) {
-//            case "openNewAccount": return this.openNewAccount;
-
+            case "women": return this.women;
+            case "wtops": return this.wtops;
+            case "wbottoms": return this.wbottoms;
+            case "men": return this.men;
+            case "mtops": return this.mtops;
+            case "mbottoms": return this.mbottoms;
+            case "gear": return this.gear;
+            case "bags": return this.bags;
+            case "fequipment": return this.fequipment;
+            case "training": return this.training;
+            case "vdownload": return this.videoDownload;
+            case "whatsNew": return this.whatsNewButton;
+            case "sale": return this.sale;
         }
         return null;
     }

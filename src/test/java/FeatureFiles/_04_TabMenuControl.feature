@@ -7,5 +7,20 @@ Feature: TabMenu Controlling
 
   Scenario: Tab Menu Functions
 
-    And Hover over the  Element
-    ||
+    And Click on the Element in DialogContent
+      | whatsNew |
+      | sale     |
+
+    And Hover over the Element in DialogContent
+      | women      |
+      | wtops      |
+      | wbottoms   |
+      | men        |
+      | mtops      |
+      | mbottoms   |
+      | gear       |
+      | bags       |
+      | fequipment |
+      | training   |
+      | vdownload  |
+
