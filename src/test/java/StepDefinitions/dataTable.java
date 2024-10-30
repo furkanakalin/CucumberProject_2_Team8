@@ -2,6 +2,7 @@ package StepDefinitions;
 
 import Pages.LeftNav;
 import Pages._01_DialogContent;
+import Pages._04_DialogContent;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import org.openqa.selenium.WebElement;
@@ -10,7 +11,7 @@ import java.util.List;
 
 public class dataTable {
     LeftNav ln=new LeftNav();
-    _01_DialogContent dc=new _01_DialogContent();
+    _04_DialogContent dc=new _04_DialogContent();
 
 
     @And("Click on the Element in LeftNav")
@@ -27,7 +28,7 @@ public class dataTable {
     public void clickOnTheElementInDialogContent(DataTable dtButtons) {
         List<String> buttons=dtButtons.asList();
         for (int i = 0; i < buttons.size() ; i++) {
-            ln.myClick(dc.getWebElement(buttons.get(i)));
+            dc.myClick(dc.getWebElement(buttons.get(i)));
 
         }
     }
@@ -41,8 +42,15 @@ public class dataTable {
             WebElement box= dc.getWebElement(boxandLetters.get(i).get(0));
             dc.mySendKeys(box, boxandLetters.get(i).get(1));
         }
+    }
 
+    @And("Hover over the Element in DialogContent")
+    public void hoverOvertheElementinDialogContent(DataTable dtButton){
+        List<String> buttons = dtButton.asList();
 
+        for (int i = 0; i < buttons.size(); i++) {
+            dc.hoverOver(dc.getWebElement(buttons.get(i)));
+        }
 
     }
 
