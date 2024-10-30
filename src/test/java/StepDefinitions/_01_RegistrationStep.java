@@ -17,7 +17,7 @@ public class _01_RegistrationStep {
 
     @Then("Success message should be displayed")
     public void success_message_should_be_displayed() {
-
+        dc.verifyMessageContainsText("Thank you");
 
     }
 }

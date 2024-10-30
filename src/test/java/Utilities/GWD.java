@@ -10,12 +10,12 @@ import java.util.Locale;
 
 public class GWD {  // Genel Web Driver
     private static WebDriver driver;
-    public static final Logger log4j= LogManager.getLogger();
+    //public static final Logger log4j= LogManager.getLogger();
 
     public static WebDriver getDriver() {
         Locale.setDefault(new Locale("EN"));
         System.setProperty("user.language", "EN");
-        log4j.info("driver started");
+        //log4j.info("driver started");
 
         if (driver == null)
         {
@@ -28,7 +28,7 @@ public class GWD {  // Genel Web Driver
     }
 
     public static void quitDriver() {
-        log4j.info("driver quitted");
+        //log4j.info("driver quitted");
         try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {

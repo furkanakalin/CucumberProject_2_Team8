@@ -9,11 +9,11 @@ Feature: Registraion Functionalty
       | createanaccount |
 
     And User Sending the keys in DialogContent
-      | firstname | team                 |
-      | lastname  | eight                |
+      | firstname | team                  |
+      | lastname  | eight                 |
       | email     | teameight87@gmail.com |
-      | password  | Project2.            |
-      | confirm   | Project2.           |
+      | password  | Project2.             |
+      | confirm   | Project2.             |
 
     And Click on the Element in DialogContent
       | create |
