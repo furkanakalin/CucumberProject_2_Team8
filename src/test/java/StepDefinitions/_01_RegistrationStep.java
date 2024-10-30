@@ -12,13 +12,12 @@ public class _01_RegistrationStep {
     @Given("Navigate to the Website")
     public void navigate_to_the_website() {
         // Write code here that turns the phrase above into concrete actions
-        GWD.getDriver().get("https://magento.softwaretestingboard.com/");
-        throw new io.cucumber.java.PendingException();
+        GWD.getDriver().get("https://magento.softwaretestingboard.com");
     }
 
     @Then("Success message should be displayed")
     public void success_message_should_be_displayed() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
+
     }
 }

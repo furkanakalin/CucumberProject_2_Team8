@@ -1,9 +1,13 @@
 package Pages;
 
 import Utilities.GWD;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
 public class _01_DialogContent extends ParentPage {
@@ -35,6 +39,9 @@ public class _01_DialogContent extends ParentPage {
     @FindBy(xpath = "//*[@title='Create an Account']")
     public WebElement create;
 
+    @FindBy(xpath = "//*[text()='Thank you for registering with Main Website Store.']")
+    public WebElement successmessage;
+
     public WebElement getWebElement(String strElementName){
 
         switch (strElementName.trim())
@@ -49,6 +56,13 @@ public class _01_DialogContent extends ParentPage {
         }
 
         return null;
+    }
+    public void verifyMessageContainsText(String value){
+        wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath("//hot-toast-container/div/div/div//*"),0));
+        Assert.assertTrue( this.successmessage.getAttribute("innerHTML").toLowerCase().contains(value.toLowerCase()));
+
+        //sayfaya ESC tuşu gönderildi, açık mesaj kalmasın diye
+        new Actions(GWD.getDriver()).sendKeys(Keys.ESCAPE).build().perform();
     }
 
 }

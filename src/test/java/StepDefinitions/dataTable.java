@@ -27,7 +27,7 @@ public class dataTable {
     public void clickOnTheElementInDialogContent(DataTable dtButtons) {
         List<String> buttons=dtButtons.asList();
         for (int i = 0; i < buttons.size() ; i++) {
-            ln.myClick(dc.getWebElement(buttons.get(i)));
+            dc.myClick(dc.getWebElement(buttons.get(i)));
 
         }
     }
@@ -43,6 +43,15 @@ public class dataTable {
         }
 
 
+
+    }
+    @And("Hover over the Element in DialogContent")
+    public void hoverOvertheElementinDialogContent(DataTable dtButton){
+        List<String> buttons = dtButton.asList();
+
+        for (int i = 0; i < buttons.size(); i++) {
+            dc.hoverOver(dc.getWebElement(buttons.get(i)));
+        }
 
     }
 

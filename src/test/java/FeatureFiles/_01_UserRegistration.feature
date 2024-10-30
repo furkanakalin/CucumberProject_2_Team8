@@ -11,9 +11,9 @@ Feature: Registraion Functionalty
     And User Sending the keys in DialogContent
       | firstname | team                 |
       | lastname  | eight                |
-      | email     | teameight6@gmail.com |
-      | password  | project2             |
-      | confirm   | project2             |
+      | email     | teameight87@gmail.com |
+      | password  | Project2.            |
+      | confirm   | Project2.           |
 
     And Click on the Element in DialogContent
       | create |
