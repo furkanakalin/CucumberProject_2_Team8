@@ -14,12 +14,22 @@ public class _04_DialogContent extends ParentPage {
         PageFactory.initElements(GWD.getDriver(), this);
     }
 
-//    @FindBy(xpath = "//a[contains(text(),'Open New Account')]")
+    //    @FindBy(xpath = "//a[contains(text(),'Open New Account')]")
 //    public WebElement openNewAccount;
+    @FindBy(xpath = "(//li[@class='authorization-link']/a)[1]")
+    public WebElement signIn;
 
+    @FindBy(id = "email")
+    public WebElement email;
 
-    public WebElement getWebElement(String strWebElement){
-        switch (strWebElement){
+    @FindBy(id = "password")
+    public WebElement password;
+
+    @FindBy(xpath = "//button[@class='action login primary']")
+    public WebElement submit;
+
+    public WebElement getWebElement(String strWebElement) {
+        switch (strWebElement) {
 //            case "openNewAccount": return this.openNewAccount;
 
         }
