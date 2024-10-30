@@ -39,7 +39,7 @@ public class _01_DialogContent extends ParentPage {
     @FindBy(xpath = "//*[@title='Create an Account']")
     public WebElement create;
 
-    @FindBy(xpath = "//*[text()='Thank you for registering with Main Website Store.']")
+    @FindBy(xpath = "//span[text()='My Account']")
     public WebElement successmessage;
 
     public WebElement getWebElement(String strElementName){
@@ -53,16 +53,14 @@ public class _01_DialogContent extends ParentPage {
             case "password": return this.password;
             case "confirm": return this.confirm;
             case "create": return this.create;
+            case "successmessage": return this.successmessage;
         }
 
         return null;
     }
     public void verifyMessageContainsText(String value){
-        wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath("//hot-toast-container/div/div/div//*"),0));
         Assert.assertTrue( this.successmessage.getAttribute("innerHTML").toLowerCase().contains(value.toLowerCase()));
 
-        //sayfaya ESC tuşu gönderildi, açık mesaj kalmasın diye
-        new Actions(GWD.getDriver()).sendKeys(Keys.ESCAPE).build().perform();
     }
 
 }
