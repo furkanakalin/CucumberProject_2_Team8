@@ -7,4 +7,5 @@ Feature: TabMenu Controlling
 
   Scenario: Tab Menu Functions
 
-    And
+    And Hover over the  Element
+    ||
