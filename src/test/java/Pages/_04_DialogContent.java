@@ -71,6 +71,14 @@ public class _04_DialogContent extends ParentPage {
     @FindBy(xpath = "//a//span[text()='Video Download']")
     public WebElement videoDownload;
 
+    @FindBy(xpath = "(//strong/a)[8]")
+    public WebElement product;
+
+    @FindBy(xpath = "(//li[@class='item product product-item']/div)[8]")
+    public WebElement product8;
+
+    @FindBy(xpath = "//div[@data-bind='html: $parent.prepareMessageForHtml(message.text)']")
+    public WebElement successMessage;
 
     public WebElement getWebElement(String strWebElement) {
         switch (strWebElement) {
@@ -87,8 +95,12 @@ public class _04_DialogContent extends ParentPage {
             case "vdownload": return this.videoDownload;
             case "whatsNew": return this.whatsNewButton;
             case "sale": return this.sale;
+
+            case "product": return this.product;
+            case "product8": return this.product8;
+            case "message": return this.successMessage;
+
         }
         return null;
-    }
-}
+    }}
 
