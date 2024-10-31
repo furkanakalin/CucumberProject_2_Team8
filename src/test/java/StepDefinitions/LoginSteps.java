@@ -2,14 +2,44 @@ package StepDefinitions;
 
 import Pages._04_DialogContent;
 import Utilities.GWD;
+import io.cucumber.datatable.DataTable;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.WebElement;
+
+import java.util.List;
 
 public class LoginSteps {
     _04_DialogContent dc=new _04_DialogContent();
-    @Given("Navigate to the Website")
-    public void navigateToTheWebsite() {
-        GWD.getDriver().get("https://magento.softwaretestingboard.com/");
+
+    @And("Click on the Element in DialogContent")
+    public void clickOnTheElementInDialogContent(DataTable dtButtons) {
+        List<String> buttons=dtButtons.asList();
+        for (int i = 0; i < buttons.size() ; i++) {
+            dc.myClick(dc.getWebElement(buttons.get(i)));
+
+        }
+    }
+
+    @And("User Sending the keys in DialogContent")
+    public void userSendingTheKeysInDialogContent(DataTable dtboxandLetters) {
+        List<List<String>> boxandLetters=dtboxandLetters.asLists();
+
+        for (int i = 0; i < boxandLetters.size(); i++) {
+            WebElement box= dc.getWebElement(boxandLetters.get(i).get(0));
+            dc.mySendKeys(box, boxandLetters.get(i).get(1));
+        }
+    }
+
+    @And("Hover over the Element in DialogContent")
+    public void hoverOvertheElementinDialogContent(DataTable dtButton){
+        List<String> buttons = dtButton.asList();
+
+        for (int i = 0; i < buttons.size(); i++) {
+            dc.hoverOver(dc.getWebElement(buttons.get(i)));
+        }
+
     }
 
     @When("Enter username and password to login")

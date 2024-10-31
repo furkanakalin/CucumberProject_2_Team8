@@ -5,17 +5,17 @@ Feature: Registraion Functionalty
 
   Scenario: Register to the Website
 
-    And Click on the Element in DialogContent
+    And Click on Element in DialogContent
       | createanaccount |
 
-    And User Sending the keys in DialogContent
-      | firstname | team                  |
-      | lastname  | eight                 |
-      | email     | teameight3@gmail.com |
-      | password  | Project2.             |
-      | confirm   | Project2.             |
+    And User Sending keys in DialogContent
+      | firstname | team                 |
+      | lastname  | eight                |
+      | email     | teameight7@gmail.com |
+      | password  | Project2.            |
+      | confirm   | Project2.            |
 
-    And Click on the Element in DialogContent
+    And Click on Element in DialogContent
       | create |
 
     Then Success message should be displayed
