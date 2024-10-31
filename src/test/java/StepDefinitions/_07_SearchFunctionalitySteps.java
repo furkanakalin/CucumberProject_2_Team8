@@ -2,14 +2,11 @@ package StepDefinitions;
 
 import Pages._07_DialogContent;
 import Utilities.GWD;
-import io.cucumber.datatable.DataTable;
+
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.testng.Assert;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class _07_SearchFunctionalitySteps {
     _07_DialogContent dc = new _07_DialogContent();
