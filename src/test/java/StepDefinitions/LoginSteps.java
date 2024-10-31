@@ -5,6 +5,7 @@ import Utilities.GWD;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebElement;
 
@@ -49,5 +50,15 @@ public class LoginSteps {
         dc.mySendKeys(dc.password, "Profilepicture10+");
         dc.myClick(dc.submit);
 
+    }
+
+    @Then("Product is added to the WishList")
+    public void productadded() {
+        dc.verifyMessageContainsText("added");
+    }
+
+    @Then("Product is removed from the WishList")
+    public void productremoved() {
+        dc.verifyMessageContainsText("removed");
     }
 }
