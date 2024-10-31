@@ -21,8 +21,14 @@ public class _03_DialogContent extends ParentPage {
     @FindBy(xpath = "(//*[text()='My Account'])[1]")
     public WebElement myaccount;
 
-    @FindBy(xpath = "//*[text()='Address Book']")
-    public WebElement addressbook;
+    @FindBy(xpath = "//*[text()='Manage Addresses']")
+    public WebElement manageaddress;
+
+    @FindBy(xpath = "//*[text()='Add New Address']")
+    public WebElement addnewaddress;
+
+    @FindBy(id = "telephone")
+    public WebElement phone;
 
     @FindBy(id = "street_1")
     public WebElement street;
@@ -42,30 +48,50 @@ public class _03_DialogContent extends ParentPage {
     @FindBy(id = "country")
     public WebElement country;
 
-    @FindBy(xpath = "(//*[text()='Georgia'])[1]")
+    @FindBy(xpath = "(//*[text()='Georgia'])[2]")
     public WebElement getGeorgia;
 
-    @FindBy(xpath = "//*[@class='action save primary']")
+    @FindBy(xpath = "//*[text()='Save Address']")
     public WebElement save;
 
-    public WebElement getWebElement(String strElementName){
+    @FindBy(xpath = "//*[text()='You saved the address.']")
+    public WebElement successmessage;
 
-        switch (strElementName.trim())
-        {
-            case "actionbutton": return this.actionbutton;
-            case "myaccount": return this.myaccount;
-            case "addressbook": return this.addressbook;
-            case "region": return this.region;
-            case "georgia": return this.georgia;
-            case "country": return this.country;
-            case "getGeorgia": return this.getGeorgia;
-            case "save": return this.save;
-            case "street": return this.street;
-            case "city": return this.city;
-            case "postcode": return this.postcode;
+    public WebElement getWebElement(String strElementName) {
+
+        switch (strElementName.trim()) {
+            case "actionbutton":
+                return this.actionbutton;
+            case "myaccount":
+                return this.myaccount;
+            case "manageaddress":
+                return this.manageaddress;
+            case "addnewaddress":
+                return this.addnewaddress;
+            case "region":
+                return this.region;
+            case "georgia":
+                return this.georgia;
+            case "country":
+                return this.country;
+            case "getGeorgia":
+                return this.getGeorgia;
+            case "save":
+                return this.save;
+            case "phone":
+                return this.phone;
+            case "street":
+                return this.street;
+            case "city":
+                return this.city;
+            case "postcode":
+                return this.postcode;
 
         }
         return null;
+    }
+    public void verifyMessageContainsText(String value){
+        Assert.assertTrue( this.successmessage.isDisplayed());
     }
 
 }

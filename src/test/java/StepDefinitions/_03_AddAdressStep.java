@@ -3,6 +3,7 @@ package StepDefinitions;
 import Pages._03_DialogContent;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Then;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
@@ -26,5 +27,10 @@ public class _03_AddAdressStep {
             WebElement box= dc.getWebElement(boxandLetters.get(i).get(0));
             dc.mySendKeys(box, boxandLetters.get(i).get(1));
         }
+    }
+    @Then("Success message should displayed")
+    public void success_message_should_be_displayed() {
+        dc.verifyMessageContainsText("saved the address");
+
     }
 }
