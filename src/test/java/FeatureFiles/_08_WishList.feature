@@ -11,6 +11,22 @@ Feature: WishList functionality
       | gear |
 
     And Click on the Element in DialogContent
-      | bags     |
-      | product8 |
+      | bags        |
+      | product8    |
+      | addWishList |
+
+    And Product is added to the WishList
+
+    And Hover over the Element in DialogContent
+      | productName |
+
+    And Click on the Element in DialogContent
+      | removeButton |
+
+
+    And Product is removed from the WishList
+
+    And Click on the Element in DialogContent
+      | updateButton |
+
 

@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 
 public class _04_DialogContent extends ParentPage {
 
@@ -80,6 +81,22 @@ public class _04_DialogContent extends ParentPage {
     @FindBy(xpath = "//div[@data-bind='html: $parent.prepareMessageForHtml(message.text)']")
     public WebElement successMessage;
 
+    @FindBy(xpath = "//a[@class='action towishlist']")
+    public WebElement addWishList;
+
+    @FindBy(xpath = "//div[@data-ui-id='message-success']/div")
+    public WebElement addedMSG;
+
+    @FindBy(xpath = "//strong//a[@title='Impulse Duffle']")
+    public WebElement productName;
+
+    @FindBy(xpath = "(//a[@data-role='remove'])[2]")
+    public WebElement removeButton;
+
+    @FindBy(xpath = "//button[@title='Update Wish List']")
+    public WebElement updateButton;
+
+
     public WebElement getWebElement(String strWebElement) {
         switch (strWebElement) {
             case "women": return this.women;
@@ -99,8 +116,18 @@ public class _04_DialogContent extends ParentPage {
             case "product": return this.product;
             case "product8": return this.product8;
             case "message": return this.successMessage;
+            case "addWishList": return this.addWishList;
+            case "productName": return this.productName;
+            case "removeButton": return this.removeButton;
+            case "updateButton": return this.updateButton;
 
         }
         return null;
-    }}
+    }
+    public void verifyMessageContainsText(String value){
+        Assert.assertTrue( this.addedMSG.getAttribute("innerHTML").toLowerCase().contains(value.toLowerCase()));
+
+    }
+
+}
 
