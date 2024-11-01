@@ -51,14 +51,4 @@ public class LoginSteps {
         dc.myClick(dc.submit);
 
     }
-
-    @Then("Product is added to the WishList")
-    public void productadded() {
-        dc.verifyMessageContainsText("added");
-    }
-
-    @Then("Product is removed from the WishList")
-    public void productremoved() {
-        dc.verifyMessageContainsText("removed");
-    }
 }

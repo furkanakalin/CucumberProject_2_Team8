@@ -15,7 +15,7 @@ Feature: WishList functionality
       | product8    |
       | addWishList |
 
-    And Product is added to the WishList
+    And Successful message is displayed
 
     And Hover over the Element in DialogContent
       | productName |
@@ -23,10 +23,9 @@ Feature: WishList functionality
     And Click on the Element in DialogContent
       | removeButton |
 
-
-    And Product is removed from the WishList
+    And Successful message is displayed
 
     And Click on the Element in DialogContent
       | updateButton |
 
-
+    And Wishlist successfully updated

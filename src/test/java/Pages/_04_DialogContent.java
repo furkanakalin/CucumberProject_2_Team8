@@ -96,6 +96,12 @@ public class _04_DialogContent extends ParentPage {
     @FindBy(xpath = "//button[@title='Update Wish List']")
     public WebElement updateButton;
 
+    @FindBy(xpath = "(//strong[@class='product-item-name']/a)[2]")
+    public WebElement productTitle;
+
+
+    @FindBy(xpath = "//ol[@class='product-items']/li")
+    public WebElement productsWishlist;
 
     public WebElement getWebElement(String strWebElement) {
         switch (strWebElement) {
@@ -120,6 +126,7 @@ public class _04_DialogContent extends ParentPage {
             case "productName": return this.productName;
             case "removeButton": return this.removeButton;
             case "updateButton": return this.updateButton;
+
 
         }
         return null;
