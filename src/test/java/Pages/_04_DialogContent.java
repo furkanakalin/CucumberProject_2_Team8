@@ -100,7 +100,7 @@ public class _04_DialogContent extends ParentPage {
     public WebElement productTitle;
 
 
-    @FindBy(xpath = "//ol[@class='product-items']/li[@class='product-item']")
+    @FindBy(xpath = "//ol[@class='product-items']/li")
     public WebElement productsWishlist;
 
     public WebElement getWebElement(String strWebElement) {
