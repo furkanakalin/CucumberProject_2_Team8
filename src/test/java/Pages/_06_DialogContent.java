@@ -30,7 +30,7 @@ public class _06_DialogContent extends ParentPage {
     @FindBy(xpath = "//*[@id='minicart-content-wrapper']/div[2]/div[5]/div/a/span")
     public WebElement cartCheck;
 
-    @FindBy(id = "cart-398664-qty")
+    @FindBy(xpath = "//*[@id='cart-398746-qty']")
     public WebElement changeNumber;
 
     @FindBy(xpath = "//*[@id='form-validate']/div[2]/button[2]")
@@ -45,7 +45,7 @@ public class _06_DialogContent extends ParentPage {
     @FindBy(xpath = "//*[@id='shipping-method-buttons-container']/div/button")
     public WebElement nextButton;
 
-    @FindBy(xpath = "//*[@id='checkout-payment-method-load']/div/div/div[1]" )
+    @FindBy(xpath = "//*[@id='checkout-payment-method-load']/div/div/div[2]/div[1]/label/span" )
     public WebElement paymentTitle;
 
      @FindBy(xpath = "//*[@id='billing-address-same-as-shipping-checkmo']")
@@ -88,8 +88,8 @@ public class _06_DialogContent extends ParentPage {
 
         return null;
     }
-    public void verifyMessageContainsText(String value){
-        Assert.assertTrue( this.paymentTitle.getAttribute("innerHTML").toLowerCase().contains(value.toLowerCase()));
+    public void verifyMessageContainsText(WebElement e,String value){
+        Assert.assertTrue(e.getText().toLowerCase().contains(value.toLowerCase()));
 
     }
 

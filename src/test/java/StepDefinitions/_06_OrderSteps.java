@@ -35,13 +35,17 @@ public class _06_OrderSteps {
         WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(10));
 
         for (String button : buttons) {
-            if (button.equals(dc.proceedButton.toString())) {
+            if (button.equals("proceedButton")) {
                 try {
                     Thread.sleep(7000);
                     GWD.getDriver().navigate().refresh();
+                    wait.until(ExpectedConditions.visibilityOf(dc.proceedButton));
                     dc.proceedButton.click();
+
+                } catch (InterruptedException e) {
+                    System.out.println("Bekleme sırasında hata " + e.getMessage());
                 } catch (Exception e) {
-                    System.out.println("Hata");
+                    System.out.println("Hata" + e.getMessage());
                 }
 
             } else {
@@ -64,7 +68,7 @@ public class _06_OrderSteps {
 
     @Then("User validates the payment message displayed")
     public void userValidatesThePaymentMessageDisplayed() {
-        dc.verifyMessageContainsText("payment");
+        dc.verifyMessageContainsText(dc.paymentTitle, "payment");
     }
 
     @And("User validates the item is displayed")
@@ -74,12 +78,12 @@ public class _06_OrderSteps {
 
     @Then("User validates order {string}")
     public void userValidatesOrderString() {
-        dc.verifyMessageContainsText("thank");
+        dc.verifyMessageContainsText(dc.thanksMessage,"thank");
     }
 
     @And("User validates the saved address")
     public void userValidatesTheSavedAddress() {
-        Assert.assertTrue(dc.address.isSelected());
+       Assert.assertTrue(dc.address.getAttribute("class").contains("selected-item"));
     }
 
 }

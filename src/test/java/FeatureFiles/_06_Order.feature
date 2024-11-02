@@ -21,7 +21,6 @@ Feature: Order Functionality
       | nextButton    |
     And User validates the saved address
     Then User validates the payment message displayed
-      | paymentTitle |
     And User validates the item is displayed
     And Click on the element in DialogContent
       | placeOrder |
