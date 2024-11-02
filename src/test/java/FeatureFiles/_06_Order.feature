@@ -6,26 +6,23 @@ Feature: Order Functionality
 
   Scenario: Ordering
     And Click on the product
-    And Click on Element in DialogContent
+    And Click on the element in DialogContent
       | size      |
       | colour    |
       | addToCart |
-    And Hover over the Element in DialogContent
-      | cartImg |
-    And Click on Element in DialogContent
+      | cartImg   |
       | cartCheck |
-    And User Sending keys in DialogContent
+    And User sending keys in DialogContent
       | changeNumber | 3 |
-    And Click on Element in DialogContent
+    And Click on the element in DialogContent
       | updateButton  |
       | proceedButton |
       | radioButton   |
       | nextButton    |
+    And User validates the saved address
     Then User validates the payment message displayed
-      | paymentTitle |
     And User validates the item is displayed
-      | billingCheck |
-    And Click on Element in DialogContent
+    And Click on the element in DialogContent
       | placeOrder |
     Then User validates order {string}
       | thanksMessage |

@@ -18,7 +18,7 @@ public class _06_DialogContent extends ParentPage {
     @FindBy(xpath = "//*[@id='option-label-size-143-item-167']")
     public WebElement size;
 
-    @FindBy(xpath = "//*[@id=,'option-label-color-93-item-60']")
+    @FindBy(id = "option-label-color-93-item-57")
     public WebElement colour;
 
     @FindBy(xpath = "//*[@id='product-addtocart-button']")
@@ -30,7 +30,7 @@ public class _06_DialogContent extends ParentPage {
     @FindBy(xpath = "//*[@id='minicart-content-wrapper']/div[2]/div[5]/div/a/span")
     public WebElement cartCheck;
 
-    @FindBy(id = "cart-397896-qty")
+    @FindBy(xpath = "//*[@id='cart-398746-qty']")
     public WebElement changeNumber;
 
     @FindBy(xpath = "//*[@id='form-validate']/div[2]/button[2]")
@@ -45,7 +45,7 @@ public class _06_DialogContent extends ParentPage {
     @FindBy(xpath = "//*[@id='shipping-method-buttons-container']/div/button")
     public WebElement nextButton;
 
-    @FindBy(xpath = "//*[@id='checkout-payment-method-load']/div/div/div[1]" )
+    @FindBy(xpath = "//*[@id='checkout-payment-method-load']/div/div/div[2]/div[1]/label/span" )
     public WebElement paymentTitle;
 
      @FindBy(xpath = "//*[@id='billing-address-same-as-shipping-checkmo']")
@@ -59,6 +59,9 @@ public class _06_DialogContent extends ParentPage {
 
      @FindBy(xpath = "//*[@id='maincontent']/div[3]/div/div[2]/p[1]/a") // kontrol et
     public WebElement orderID;
+
+     @FindBy(xpath = "//*[@id='checkout-step-shipping']/div[1]/div/div/div[1]")
+     public WebElement address;
 
      public WebElement getWebElement(String strElementName){
 
@@ -80,9 +83,14 @@ public class _06_DialogContent extends ParentPage {
             case "placeOrder" : return this.placeOrder;
             case "thanksMessage" : return this.thanksMessage;
             case "orderID" : return this.orderID;
+            case "address" : return this.address;
         }
 
         return null;
+    }
+    public void verifyMessageContainsText(WebElement e,String value){
+        Assert.assertTrue(e.getText().toLowerCase().contains(value.toLowerCase()));
+
     }
 
 }
